@@ -1,0 +1,41 @@
+controller_frequency: 3.0 #更新规划的频率times/s,设置过高cpu容易过载，通常在3-5
+recovery_behavior_enabled: false 
+clearing_rotation_allowed: false
+
+TrajectoryPlannerROS:
+   max_vel_x: 0.3 #最大线速度 m/s，对于室内机器人0.5已经很快了
+   min_vel_x: 0.05 #最小线速度 m/s
+   max_vel_y: 0.0  # zero for a differential drive robot
+   min_vel_y: 0.0
+   #max_vel_theta: 1.0 #最大旋转速度，radians/s
+   #min_vel_theta: -1.0 #最小旋转速度，radians/s
+   min_in_place_vel_theta: 0.5 #最小就地转速，radians/s
+   escape_vel: -0.1 #倒退的速度，m/s
+   acc_lim_x: 2.5 #线速度的加速度m/s^2
+   acc_lim_y: 0.0 # zero for a differential drive robot
+   acc_lim_theta: 3.2 #角速度加速度radians/s^2
+
+   holonomic_robot: false
+   yaw_goal_tolerance: 0.1 # 接近目标的弧度，太小容易在目标处振荡 about 6 degrees
+   xy_goal_tolerance: 0.1  # 10 cm 接近目标的距离，太小容易多次调整，不要小于屏幕最小分辨率
+   latch_xy_goal_tolerance: false
+   pdist_scale: 0.8 #强调全局路径的重要性
+   gdist_scale: 0.6 #只要达到目标，全局路径不太重要
+   meter_scoring: true
+
+   heading_lookahead: 0.325
+   heading_scoring: false
+   heading_scoring_timestep: 0.8
+   occdist_scale: 0.1 # 避免障碍的重要性
+   oscillation_reset_dist: 0.05
+   publish_cost_grid_pc: false
+   prune_plan: true
+
+   sim_time: 1.0
+   sim_granularity: 0.025
+   angular_sim_granularity: 0.025
+   vx_samples: 8
+   vy_samples: 0 # zero for a differential drive robot
+   vtheta_samples: 20
+   dwa: true
+   simple_attractor: false

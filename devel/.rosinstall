@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/kong/rbx_ws/devel/setup.sh

@@ -1,0 +1,10 @@
+global_costmap:
+   global_frame: /map
+   robot_base_frame: /base_footprint
+   update_frequency: 1.0 #更新地图的频率，一般在1-5，Hz
+   publish_frequency: 0
+   static_map: true
+   rolling_window: false
+   resolution: 0.01
+   transform_tolerance: 1.0 #tf变换可容忍的延迟，s
+   map_type: costmap

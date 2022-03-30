@@ -1,0 +1,12 @@
+local_costmap:
+   global_frame: /odom
+   robot_base_frame: /base_footprint
+   update_frequency: 3.0
+   publish_frequency: 1.0 #更新本地地图，非零即好，每秒一次就ok，机器人速度快就调大点
+   static_map: false
+   rolling_window: true #滚动窗口
+   width: 6.0 #滚动窗口宽度
+   height: 6.0 #滚动窗口的长度
+   resolution: 0.01 #滚动窗口的分辨率
+   transform_tolerance: 1.0 #如果网速慢得提高延迟时间，s
+   map_type: costmap
